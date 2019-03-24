@@ -1,13 +1,17 @@
 /* overall setting */
 body {
-	font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
- 	margin: 0;
-	height: 100%;
+	font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; 
+	margin:0; /* attribute like the margin:0 border:0 and display:flex are already set by bootstap*/
+	border:0; 
+	padding:0;
 }
 
 body.inner{
 	display: flex;
 	flex-direction: column;
+	margin:0; /* attribute like the margin:0 border:0 and display:flex are already set by bootstap*/
+	border:0; 
+	padding:0;
 }
 
 a:link, a:visited{
@@ -102,7 +106,7 @@ nav ul li:hover ul{  /* show second level drop-down list when hovering*/
 	display: flex;
 	flex-direction: column;
 	position: absolute;  /* must use aboslute to make the second level list overflow*/
-	top: 38px;
+	top: 36px;  /* have to adjust the distance to make them connected*/
 }
 
 nav ul ul li{
@@ -130,17 +134,13 @@ nav div#placeholder a:hover{
 
 /* header */
 header{
-	display: flex;
-	flex-direction: column;
 	flex:0 0 auto;  /* this is default parameter is 0 1 auto*/
-}
-#title-div { 
-	overflow: hidden;
-	margin:0px;
-	border:0px;
+	margin:0;
+	border:0;
 }
 
 #title-img {
+	display:block;
 	min-height: 200px;
 	max-height:300px;
 	width: 100%;
@@ -180,7 +180,7 @@ footer{
 	display: flex;
 	flex-direction: column;
 	flex: 0 0 auto;
-	height: 300px;
+	height: 320px;
 	background-color: #303030;
 	color: #DDDDDD;
 }
@@ -190,15 +190,14 @@ hr{
 }
 
 /* feedback form inside footer*/
-#form, #text{
-	width: 300px;
-	height: 400px;
+#form-btn {
+	margin-top: 10px;
 }
-
 #row{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin-top:10px;
 }
 #left-footer, #copyright{
 	margin-left:130px;
