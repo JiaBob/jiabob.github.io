@@ -29,8 +29,20 @@
 		<li> <a class="has-underline" href="contents/articles.html">Articles</a></li>
 		<li> <a class="has-underline" href="contents/gallery.html">Gallery</a></li>
 		<li> <a class="has-underline" href="contents/sitemap.html">Sitemap</a></li>
-		<li> <a class="has-underline" href="assignment.html">Assignment.html</a></li>
+		<li> <a class="has-underline" id="assignpage" href="assignment.html">Assignment.html</a></li>
 	</ul>
 </div>
 </main>
 </body>
+
+<!-- highlight the select element (element id after # from url)-->
+<script>
+select = function GetRequest() {
+  var str = location.href
+  var num = str.indexOf("#");
+  str = str.substr(num + 1);
+  return str;
+}
+elementid = select();
+$("#"+elementid).css("border", "thick solid red");
+</script>
