@@ -1,2 +1,2 @@
-# boblog
+# Boblog
 my blog
