@@ -1,0 +1,265 @@
+/* overall setting */
+body {
+	font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+ 	margin: 0;
+	height: 100%;
+}
+
+body.inner{
+	display: flex;
+	flex-direction: column;
+}
+
+a:link, a:visited{
+	text-decoration: none;
+	color: black;
+}
+a:hover{
+	text-decoration: none;
+	color: black;
+	border-bottom: thick solid #0DD00D;
+}
+a.has-underline:link, a.has-underline:visited{
+	text-decoration: none;
+	color: black;
+	border-bottom: thick solid #0DD00D;
+}
+a.has-underline:hover{
+	text-decoration: none;
+	background-color: #1DDD3D;
+	transition: background-color 1s;
+}
+
+span.date{
+	font-family: Montserrat;
+	font-weight: 400;
+	font-size: 13px;
+	color: #999;
+}
+
+/* CSS for index.html */
+/* main content*/
+main#index-main{
+	display: flex;
+	flex-direction: row;
+	margin: 60px;
+}
+
+div#index-text{
+	flex-grow: 5;
+	margin-right: 350px;
+}
+
+div#index-content{
+	flex-grow: 1;
+	margin-top: 150px;
+}
+
+/* links inside text*/
+p.index-main-p{
+	font-size: 1.5em;
+}
+
+
+/* CSS for '/content/*.html' */
+/* navigation bar*/
+/* nav bar overall setting*/
+nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 0;
+	border: 0;
+	width: 100%;
+	height: 40px;
+	background-color: white;
+	position: fixed;
+	top: 0;
+}
+
+nav a{
+	padding: 14px 16px;
+}
+
+/* link hover style (to override the overall setting)*/
+nav a:hover{
+	background-color: #D0D0D0;
+	border-bottom: none;
+	text-decoration: none;
+}
+
+/* nav bar main menu (left part of it)*/
+nav ul{
+	display: flex;
+	list-style-type: none;
+}
+
+nav ul ul {  /* hide second level drop-down list before hovering*/
+	display: none;
+}
+
+nav ul li:hover ul{  /* show second level drop-down list when hovering*/
+	display: flex;
+	flex-direction: column;
+	position: absolute;  /* must use aboslute to make the second level list overflow*/
+	top: 38px;
+}
+
+nav ul ul li{
+	display: flex;
+	background-color: white;
+	position: relative;
+	right: 40px;  /* have to adjust the position to make them aligned*/
+}
+
+nav ul ul li a{  /* have to adjust the padding to make them aligned*/
+	padding: 14px 29px;
+	margin: 1px;
+}
+
+/* placeholder (right part of the nav bar) */
+nav div#placeholder{
+	flex-grow: 6;
+	display: flex;
+	align-items: row;
+	justify-content: flex-end;
+}
+nav div#placeholder a:hover{
+	background-color: transparent;
+}
+
+/* header */
+header{
+	display: flex;
+	flex-direction: column;
+	flex:0 0 auto;  /* this is default parameter is 0 1 auto*/
+}
+#title-div { 
+	overflow: hidden;
+	margin:0px;
+	border:0px;
+}
+
+#title-img {
+	min-height: 200px;
+	max-height:300px;
+	width: 100%;
+	height: auto;
+}
+
+/* title */
+#title {
+	display: flex; 
+	justify-content:center;
+	margin: 20px
+}
+
+/* main content */
+main#inner-main {
+	flex: 1 0 auto;
+	display: flex; 
+	flex-direction: column; 
+	align-items: center;
+}
+
+section{
+	border-bottom: thin solid #A9A9A9;
+	margin-bottom: 30px;
+}	
+
+article {
+	width: 500px;
+}
+p {
+	text-align: justify;
+}
+
+
+/* footer */
+footer{
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 auto;
+	height: 300px;
+	background-color: #303030;
+	color: #DDDDDD;
+}
+hr{
+	color: black;
+	width: 1000px;
+}
+
+/* feedback form inside footer*/
+#form, #text{
+	width: 300px;
+	height: 400px;
+}
+
+#row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#left-footer, #copyright{
+	margin-left:130px;
+}
+#right-footer{
+	margin-right:130px;
+}
+
+
+/* float buttons */
+#fix-float {
+	width: 160px;
+	height: 150px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+#up, #left, #right, #down{
+	position: absolute; 
+}
+#up{
+	top: 10px; 
+	left: 30px;
+}
+#up:hover{
+	animation: up-anim 0.8s ease-out;
+}
+@keyframes up-anim{
+	0% {top: 10px;}
+	20% {top: 7.5px; opacity:0.6}
+	50% {top: 5px; opacity:0.5}
+	75% {top: 2.5px; opacity:0.4}
+	100% {top: 0; opacity:0.3}
+}
+
+#left{
+	top: 30px; 
+	left: 10px;
+}
+#left:hover{
+	left: 0;
+	opacity: 0.3;
+	transition: left 0.8s, opacity 0.8s;
+}
+
+#right{
+	top: 30px; 
+	left: 50px;
+}
+#right:hover{
+	left: 60px;
+	opacity: 0.3;
+	transition: left 0.8s, opacity 0.8s;
+}
+
+#down{
+	top: 50px; 
+	left: 30px;
+}
+#down:hover{
+	opacity: 0.3;
+	top: 60px;
+	transition: top 0.8s, opacity 0.8s;
+}

@@ -1,0 +1,16 @@
+css:
+1. boostrap CDN "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+
+js
+1. boostrap CDN "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+2. jquery   CDN "https://code.jquery.com/jquery-3.2.1.slim.min.js"
+3. popper	CDM	"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+
+static/img
+1. GitHub-Mark-32px.png https://github.com/logos
+2. down-arrow.svg 		reproduce from https://iconmonstr.com/arrow-24-svg/
+3. up-arrow.svg 		reproduce from https://iconmonstr.com/arrow-24-svg/
+4. left-arrow.svg 		reproduce from https://iconmonstr.com/arrow-24-svg/
+5. right-arrow.svg 		https://iconmonstr.com/arrow-24-svg/
+6. icon_32.png 			self-desgin
+7. title.jpg			self-photograph
