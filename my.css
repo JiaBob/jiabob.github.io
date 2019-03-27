@@ -41,6 +41,7 @@ span.date{
 	color: #999;
 }
 
+
 /* CSS for index.html */
 /* main content*/
 main#index-main{
@@ -62,6 +63,16 @@ div#index-content{
 /* links inside text*/
 p.index-main-p{
 	font-size: 1.5em;
+}
+
+
+/* CSS for content/sitemap.html*/
+main#sitemap-main section{
+	display: flex; 
+	flex-direction: column; 
+	align-items: center;
+	flex-wrap:wrap;
+	height:200px;   /* must specify the size of inner container, otherwise the content inside inner container may overflow.*/
 }
 
 

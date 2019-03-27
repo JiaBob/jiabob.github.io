@@ -64,8 +64,9 @@
 		<div id="left-footer">
 			<div>
 			<p>Feedback</p>
-			<textarea rows='5' cols='50' form="feedback-form" placeholder="What you want to talk to me?" ></textarea>
-			<form id="feedback-form" action="">
+			<textarea rows='5' cols='50' form="the-form" name="body" placeholder="What you want to talk to me?" ></textarea>
+			<form id="the-form" action="mailto:123419282@qq.com" enctype="text/plain">
+				<input type="text" name="subject" value="boblog feedback" style="display:none"> </input>
 				<input type="submit" class="btn btn-light" id="form-btn" value="send to me"> </input>
 			</form>
 			</div>
@@ -95,9 +96,10 @@
 select = function GetRequest() {
   var str = location.href
   var num = str.indexOf("#");
-  str = str.substr(num + 1);
-  return str;
+  if (num != -1){
+	elementid = str.substr(num + 1);
+    $("#"+elementid).css("border", "thick solid red");
+  }
 }
-elementid = select();
-$("#"+elementid).css("border", "thick solid red");
+select();
 </script>

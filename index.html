@@ -40,9 +40,10 @@
 select = function GetRequest() {
   var str = location.href
   var num = str.indexOf("#");
-  str = str.substr(num + 1);
-  return str;
+  if (num != -1){
+	elementid = str.substr(num + 1);
+    $("#"+elementid).css("border", "thick solid red");
+  }
 }
-elementid = select();
-$("#"+elementid).css("border", "thick solid red");
+select();
 </script>
