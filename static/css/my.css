@@ -1,8 +1,8 @@
 /* overall setting */
 body {
-	font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; 
+	font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 	margin:0; /* attribute like the margin:0 border:0 and display:flex are already set by bootstap*/
-	border:0; 
+	border:0;
 	padding:0;
 }
 
@@ -10,7 +10,7 @@ body.inner{
 	display: flex;
 	flex-direction: column;
 	margin:0; /* attribute like the margin:0 border:0 and display:flex are already set by bootstap*/
-	border:0; 
+	border:0;
 	padding:0;
 }
 
@@ -68,11 +68,11 @@ p.index-main-p{
 
 /* CSS for content/sitemap.html*/
 main#sitemap-main section{
-	display: flex; 
-	flex-direction: column; 
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 	flex-wrap:wrap;
-	height:200px;   /* must specify the size of inner container, otherwise the content inside inner container may overflow.*/
+	height:200px;   /* must specify the size of inner container, otherwise the content inside inner container may overflow. Alternatively, set the size of outer contain with specific pixels and use percentage size for inner container*/
 }
 
 
@@ -87,7 +87,7 @@ nav {
 	border: 0;
 	width: 100%;
 	height: 40px;
-	background-color: white;
+	background-color: #D0D0D0;
 	position: fixed;
 	top: 0;
 }
@@ -136,7 +136,6 @@ nav ul ul li a{  /* have to adjust the padding to make them aligned*/
 nav div#placeholder{
 	flex-grow: 6;
 	display: flex;
-	align-items: row;
 	justify-content: flex-end;
 }
 nav div#placeholder a:hover{
@@ -160,7 +159,7 @@ header{
 
 /* title */
 #title {
-	display: flex; 
+	display: flex;
 	justify-content:center;
 	margin: 20px
 }
@@ -168,15 +167,15 @@ header{
 /* main content */
 main#inner-main {
 	flex: 1 0 auto;
-	display: flex; 
-	flex-direction: column; 
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 }
 
 section{
 	border-bottom: thin solid #A9A9A9;
 	margin-bottom: 30px;
-}	
+}
 
 article {
 	width: 500px;
@@ -227,10 +226,10 @@ hr{
 	bottom: 0;
 }
 #up, #left, #right, #down{
-	position: absolute; 
+	position: absolute;
 }
 #up{
-	top: 10px; 
+	top: 10px;
 	left: 30px;
 }
 #up:hover{
@@ -245,7 +244,7 @@ hr{
 }
 
 #left{
-	top: 30px; 
+	top: 30px;
 	left: 10px;
 }
 #left:hover{
@@ -255,7 +254,7 @@ hr{
 }
 
 #right{
-	top: 30px; 
+	top: 30px;
 	left: 50px;
 }
 #right:hover{
@@ -265,7 +264,7 @@ hr{
 }
 
 #down{
-	top: 50px; 
+	top: 50px;
 	left: 30px;
 }
 #down:hover{
