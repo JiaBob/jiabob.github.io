@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>  image map </title>
+	<meta charset='utf-8'/>
+	<meta name="keyword" content="my scene">
+	<link rel="icon" href="./static/img/icon_32.png" type="/image/x-icon" />
+
+	<!-- boostrap4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./static/css/my.css"/> <!-- own css import should be at the end to override the css of boostrap4-->
+
+</head>
+<body  >
+
+<!-- nav bar/ -->
+<nav class="top">
+<ul>
+<li><a href="./index.html">Home</a></li>
+<li><a href="./contents/article/1.html">Passion</a></li>
+<li><a href="./contents/articles.html">Articles</a></li>
+<li>
+	<a href="./contents/gallery.html">Gallery</a>
+	<ul>
+	<li><a>...</a></li>
+	<li><a>...</a></li>
+	</ul>
+</li>
+</ul>
+<div id="placeholder">
+	<ul>
+		<li>
+			<a href="./https://github.com/JiaBob.html" target="_blank"><img src="./static/img/GitHub-Mark-32px.png"><img></a>
+		</li>
+	</ul>
+</div>
+</nav>
+<!-- /nav bar -->
+
+<!-- header/ -->
+<header>
+<div>
+	 <img id="title-img" src="./static/img/title.jpg"> 
+	<h1 id="title"> Image Map </h1>
+</div>
+</header>
+<!-- /header -->
+
+<!-- content/ -->
+
+<main id="inner-main">
+    <h1>
+    <img src="https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/room.jpg" usemap="#image-map">
+
+    <map name="image-map">
+    <area target="" alt="kitchen" data-toggle='modal' data-target='#imagemapModal' title="kitchen" data-imgname='kitchen' coords="297,365,496,532" shape="rect">
+    <area target="" alt="living room" data-toggle='modal' data-target='#imagemapModal' title="living room" data-imgname='living room' coords="503,293,739,613" shape="rect">
+    <area target="" alt="entrance" data-toggle='modal' data-target='#imagemapModal' title="entrance" data-imgname='entrance' coords="61,569,337,614" shape="rect">
+    <area target="" alt="balcony" data-toggle='modal' data-target='#imagemapModal' title="balcony" data-imgname='balcony' coords="619,55,735,252" shape="rect">
+    <area target="" alt="my room" data-toggle='modal' data-target='#imagemapModal' title="my room" data-imgname='my room' coords="458,50,578,256" shape="rect">
+    </map>
+    </h1>
+</main>
+    <!-- Modal -->
+<div class="modal fade exampleModal-xl" id="imagemapModal" tabindex="-1" role="dialog" aria-labelledby="galleryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+	  <div class='inner'>
+	  	<div class='showsingle'>
+			<div class='wrapper'>
+				<div class='modal-img'>
+					<img class='img-small' src="">
+				</div>
+			</div>
+			<div class='modal-description'>
+				<p></p>
+			</div>
+		</div>
+
+      </div>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<!-- /content -->
+
+<!-- footer/ -->
+<footer>
+	<div id="row">
+		<div id="left-footer">
+			<div>
+			<p>Feedback</p>
+			<textarea rows='5' cols='50' form="the-form" name="body" placeholder="What you want to talk to me?" ></textarea>
+			<form id="the-form" action="mailto:123419282@qq.com" enctype="text/plain">
+				<input type="text" name="subject" value="boblog feedback" style="display:none" />
+				<input type="submit" class="btn btn-light" id="form-btn" value="send to me" />
+			</form>
+			</div>
+		</div>
+		<div id="right-footer">
+			<div>
+			<h4>Contact me</h4>
+			<p>xuxiansheng2055@gmail.com</p>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<p id="copyright">&copy; Copyright 2019 - Jiabo Xu</p>
+</footer>
+<!-- /footer -->
+
+<!-- float button/ -->
+<div id="fix-float">
+<a href="#title-img"><img id="up" src="./static/img/up-arrow.svg" width="24" height="24"></a>
+<a href="# "><img id="left" src="./static/img/left-arrow.svg" width="24" height="24" ></a>
+<a href="# "><img id="right" src="./static/img/right-arrow.svg" width="24" height="24" ></a>
+<a href="#left-footer"><img id="down" src="./static/img/down-arrow.svg" width="24" height="24" ></a>
+</div>
+<!-- /float button -->
+
+</body>
+
+<script>
+
+    $(function(){
+        // generate during initializing the page.
+
+        var imgdict = {'entrance':{'url':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/imagemap_small/imagemap-2.jpg','original':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/imagemap_prog_jpg/imagemap-2.jpg','desc':'This is the entrance of my home!'},
+                       'living room':{'url':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-50.jpg','original':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-50.jpg','desc':'This is my beautiful living room!'},
+                       'kitchen': {'url':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/imagemap_small/imagemap-1.jpg','original':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/imagemap_prog_jpg/imagemap-1.jpg','desc':'This is my lovely kitchen!'},
+                       'balcony': {'url':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-52.jpg','original':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-52.jpg','desc':'This is my blight balcony.'},
+                       'my room': {'url':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-34.jpg','original':'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-34.jpg','desc':'This is my rooooom!'},
+                       }
+
+        $('.modal').on('show.bs.modal', function(event){
+            var button = $(event.relatedTarget);
+            var img = imgdict[button.data('imgname')];
+            idx = img['index'];
+            imgshow(this, img);
+
+        })
+
+        function imgshow(modal, data){
+            $(modal).find('.modal-img img').attr('src', data['url']);
+
+            var img = new Image();
+            img.src = data['url'];
+            img.onload = function(){
+                $('.img-small').addClass('loaded');
+            };
+            var img_ori = new Image();
+            img_ori.src = data['original']
+            img_ori.onload = function(){
+                img_ori.classList.add('loaded');
+            }
+            $(modal).find('.modal-img').append(img_ori);
+            $(modal).find('.modal-description p').html(data['desc']);
+        }
+    })
+
+select = function GetRequest() {
+  var str = location.href
+  var num = str.indexOf("#");
+  if (num != -1){
+	elementid = str.substr(num + 1);
+    $("#"+elementid).css("border", "thick solid red");
+  }
+}
+select();
+</script>
+</body>
+</html>

@@ -79,7 +79,7 @@ main#sitemap-main section{
 /* CSS for '/content/*.html' */
 /* navigation bar*/
 /* nav bar overall setting*/
-nav {
+nav.top {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -90,55 +90,56 @@ nav {
 	background-color: #D0D0D0;
 	position: fixed;
 	top: 0;
+	z-index:10;
 }
 
-nav a{
+nav.top a{
 	padding: 14px 16px;
 }
 
 /* link hover style (to override the overall setting)*/
-nav a:hover{
+nav.top a:hover{
 	background-color: #D0D0D0;
 	border-bottom: none;
 	text-decoration: none;
 }
 
 /* nav bar main menu (left part of it)*/
-nav ul{
+nav.top ul{
 	display: flex;
 	list-style-type: none;
 }
 
-nav ul ul {  /* hide second level drop-down list before hovering*/
+nav.top ul ul {  /* hide second level drop-down list before hovering*/
 	display: none;
 }
 
-nav ul li:hover ul{  /* show second level drop-down list when hovering*/
+nav.top ul li:hover ul{  /* show second level drop-down list when hovering*/
 	display: flex;
 	flex-direction: column;
 	position: absolute;  /* must use aboslute to make the second level list overflow*/
 	top: 36px;  /* have to adjust the distance to make them connected*/
 }
 
-nav ul ul li{
+nav.top ul ul li{
 	display: flex;
 	background-color: white;
 	position: relative;
 	right: 40px;  /* have to adjust the position to make them aligned*/
 }
 
-nav ul ul li a{  /* have to adjust the padding to make them aligned*/
+nav.top ul ul li a{  /* have to adjust the padding to make them aligned*/
 	padding: 14px 29px;
 	margin: 1px;
 }
 
 /* placeholder (right part of the nav bar) */
-nav div#placeholder{
+nav.top div#placeholder{
 	flex-grow: 6;
 	display: flex;
 	justify-content: flex-end;
 }
-nav div#placeholder a:hover{
+nav.top div#placeholder a:hover{
 	background-color: transparent;
 }
 
@@ -183,7 +184,136 @@ article {
 p {
 	text-align: justify;
 }
+/* gallery */
+main div.gallery-label-title{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height:80px;
+	width:80%;
+}
 
+main div.gallery-label-align{
+	display:flex;
+	position: relative;
+	width: 80%;
+	height: 400px;
+}
+main div.gallery-label-img{
+	position:absolute;
+}
+main div.gallery-label-img:hover{  /* put the hovered layer on the top */
+	z-index:1;
+}
+main div.gallery-label-img img{
+	width: 100%;
+	border: 3px solid;
+
+}
+
+/* gallery content */
+.outer {
+	display:flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+	width: 80%;
+}
+.img{
+	overflow: hidden;
+	max-width:300px;
+	margin:10px;
+}
+.img img{
+	border: 5px solid ;
+	width:100%;
+}
+
+/* gallery browser */
+.modal-body {
+	padding: 0;
+	height:550px;
+}
+.modal-body inner{
+	display:flex;
+	flex-direction: column;
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+.modal-body div.showsingle{
+	display:flex;
+	flex-direction:row;
+	height:70%;
+}
+.modal-body div.showall{
+	width:100%;
+	height:10%;
+	display:flex;
+	flex-direction:row;
+}
+.modal-body div.showall div.img{
+	display:flex;
+	flex-grow: 0;
+}
+.modal-body div.showall div.img img{
+	width:100%;
+}
+.modal-body div.wrapper{
+	display:flex;
+	margin: 10px;
+	align-items: center;
+	justify-content:center;
+	height:100%;
+	width:80%;
+}
+.modal-img{
+	position:relative;
+	width:100%;
+	margin-left:80px;
+}
+.modal-img img{
+	position: absolute;
+  	opacity: 0;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	transition: opacity 1s linear;
+	z-index: 1;
+}
+.modal-img .img-small{
+	filter: blur(30px);
+}
+.modal img.loaded{
+	opacity: 1;
+}
+.modal-description{
+	width:20%;
+	margin:10px;
+}
+.modal-body button{
+	position:absolute;
+	margin: 0;
+	padding: 0;
+	outline: none;
+	background-color: white;
+	border:0;
+	opacity: 0.05;
+	height:100%;
+	width:80px;
+	z-index: 5;
+}
+.modal-body button:hover{
+	opacity: 0.7;
+	transition: opacity 0.3s;
+}
+.modal-body button.left{
+	left: 5px;
+}
+.modal-body button.right{
+	right: 5px;
+}
 
 /* footer */
 footer{
