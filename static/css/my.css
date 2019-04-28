@@ -228,7 +228,7 @@ main div.gallery-label-img img{
 	border: 5px solid ;
 	width:100%;
 }
-.img imghover{
+.img img:hover{
 	filter:brightness(1.2);
 }
 /* gallery browser */
