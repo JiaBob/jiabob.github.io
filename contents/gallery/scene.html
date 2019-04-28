@@ -59,13 +59,37 @@
     
         
 	    <div class='img'>
-		    <a data-toggle='modal' data-target='#galleryModal' data-imgname="boblogimg-80"><img src="https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-80.jpg"></a>
+		    <a data-toggle='modal' data-target='#galleryModal' data-imgname="boblogimg-1"><img src="https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-1.jpg"></a>
 	    </div>
         
     
         
 	    <div class='img'>
-		    <a data-toggle='modal' data-target='#galleryModal' data-imgname="boblogimg-86"><img src="https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-86.jpg"></a>
+		    <a data-toggle='modal' data-target='#galleryModal' data-imgname="boblogimg-11"><img src="https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-11.jpg"></a>
+	    </div>
+        
+    
+        
+	    <div class='img'>
+		    <a data-toggle='modal' data-target='#galleryModal' data-imgname="boblogimg-21"><img src="https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-21.jpg"></a>
+	    </div>
+        
+    
+        
+	    <div class='img'>
+		    <a data-toggle='modal' data-target='#galleryModal' data-imgname="boblogimg-25"><img src="https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-25.jpg"></a>
+	    </div>
+        
+    
+        
+	    <div class='img'>
+		    <a data-toggle='modal' data-target='#galleryModal' data-imgname="boblogimg-68"><img src="https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-68.jpg"></a>
+	    </div>
+        
+    
+        
+	    <div class='img'>
+		    <a data-toggle='modal' data-target='#galleryModal' data-imgname="boblogimg-80"><img src="https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-80.jpg"></a>
 	    </div>
         
     
@@ -109,7 +133,7 @@
 		<div id="left-footer">
 			<div>
 			<p>Feedback</p>
-			<textarea rows='5' cols='50' form="the-form" name="body" placeholder="What you want to talk to me?" ></textarea>
+			<textarea rows='5' cols='50' form="the-form" name="body" placeholder="What you want to talk to me-" ></textarea>
 			<form id="the-form" action="mailto:123419282@qq.com" enctype="text/plain">
 				<input type="text" name="subject" value="boblog feedback" style="display:none" />
 				<input type="submit" class="btn btn-light" id="form-btn" value="send to me" />
@@ -147,21 +171,25 @@
 
     $(function(){
         // generate during initializing the page.
-        var imglist = [{'boblogimg-80': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-80.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-80.jpg'}}, {'boblogimg-86': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-86.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-86.jpg'}}]
+        // due to backend paginating, the img info must be in a list
+        var imglist = [{'boblogimg-1': {'desc': '<h2 id="black-and-sky">Black and Sky</h2><ul><li>This is the color of Canberra in dawn.</li><li>Scene outside window always nice than inside.</li><li>Look through the world, it is not the hurt.</li></ul>', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-1.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-1.jpg'}}, {'boblogimg-11': {'desc': '<h3 id="wings-or-wing-invisible-invulnerable-incredible">Wings or Wing- Invisible, Invulnerable, Incredible.</h3>', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-11.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-11.jpg'}}, {'boblogimg-21': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-21.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-21.jpg'}}, {'boblogimg-25': {'desc': '<p>Rainball ring to ring</p>', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-25.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-25.jpg'}}, {'boblogimg-68': {'desc': '<blockquote><h3 id="have-you-seen-the-snow-worldhave-you-seen-the-snow-world">Have you seen the snow world-Have you seen the snow world-</h3><p>Who knows-</p></blockquote>', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-68.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-68.jpg'}}, {'boblogimg-80': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-80.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-80.jpg'}}]
         var imgdict = new Array();
-        var srcindex = [];
+
+        var srcindex = []; // for browser forward and backward
+
+        // construct img info from list into dictionary. it is for modal display
         for ( var i = 0; i < imglist.length; i++){
             for (var key in imglist[i])
                 imgdict[key] = imglist[i][key];
                 imgdict[key]['index'] = i;
                 srcindex.push(key);
         }
-        const imglength = srcindex.length;
-        var idx;
+        const imglength = srcindex.length;  // for browsing image in a loop
+        var idx;  // record current image index
 
         $('.modal button.left').click(function(){
-            idx = idx - 1 >= 0 ? idx - 1 : imglength - 1;
-            $('.modal').find('.modal-img img').nextAll().remove();
+            idx = idx - 1 >= 0 - idx ? 1 : imglength - 1; // for browsing image in a loop
+            $('.modal').find('.modal-img img').nextAll().remove(); // for progressive image loading
             imgshow('.modal', imgdict[srcindex[idx]]);
         })
         $('.modal button.right').click(function(){
@@ -170,28 +198,31 @@
             imgshow('.modal', imgdict[srcindex[idx]]);
 
         })
+        // boostrap in-built modal event for initialization image info from image info dictionary
         $('.modal').on('show.bs.modal', function(event){
             var button = $(event.relatedTarget);
             var img = imgdict[button.data('imgname')];
             idx = img['index'];
             imgshow(this, img);
-
         })
 
+        // main function to display image info and progressive image loading
         function imgshow(modal, data){
             $(modal).find('.modal-img img').attr('src', data['url']);
 
-            var img = new Image();
+            // load small image. (it is loaded already).
+            var img = new Image();  // Image object is used for preloading(caching) image
             img.src = data['url'];
             img.onload = function(){
-                $('.img-small').addClass('loaded');
+                $('.img-small').addClass('loaded'); // make it visible
             };
-            var img_ori = new Image();
+            var img_ori = new Image(); // start loading original image
             img_ori.src = data['original']
             img_ori.onload = function(){
                 img_ori.classList.add('loaded');
             }
-            $(modal).find('.modal-img').append(img_ori);
+            $(modal).find('.modal-img').append(img_ori);  // append before loaded. it makes progressive effect looks better.
+
             $(modal).find('.modal-description p').html(data['desc']);
         }
     })
