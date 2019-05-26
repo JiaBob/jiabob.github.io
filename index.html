@@ -1,4 +1,6 @@
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>road to life</title>
 	<meta charset='utf-8'/>
@@ -10,7 +12,10 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	
+
+    <!-- My own stuff-->
+    <script src="./static/js/dynamicLoadCss.js"></script>
+    <link rel="stylesheet" type="text/css" href="./static/css/original.css"> <!-- global css variable pass to my.css -->
 	<link rel="stylesheet" type="text/css" href="./static/css/my.css"/>
 
 </head>
@@ -19,9 +24,9 @@
 <div id="index-text">
 <h1 style="font-size:3.3em">Welcome to my site!</h1>
 <p style="font-size:2em">My name is Jiabo Xu.</p>
-<p class="index-main-p" align="justify"> I am currently studying master of computing in <a class="has-underline" href="./http://www.anu.edu.au/.html" target="_blank"> ANU </a>. In terms of research field, I am studying deep based Computer Vision subjects using <a class="has-underline" href="./https://pytorch.org/.html"target="_blank">PyTorch</a>. Besides, I am fluent user of <a class="has-underline" href="./https://www.djangoproject.com/.html"target="_blank" >Django</a> and good at full-stack web development. You could find some of my projects on <a class="has-underline" href="./https://github.com/JiaBob.html" target="_blank">GitHub</a>.</p>
-<p class="index-main-p" align="justify">Life of a man should not be bounded by career. Out of them, I'd like to share my interesting life with you. I like cooking, jogging, photography, philosophy, Go and playing video games.</p>
-<p class="index-main-p" align="justify">This website will mainly decipt the scene of my life.</p>  
+<p class="index-main-p" style="text-align:justify;"> I am currently studying master of computing in <a class="has-underline" href="http://www.anu.edu.au/" target="_blank"> ANU </a>. In terms of research field, I am studying deep based Computer Vision subjects using <a class="has-underline" href="https://pytorch.org/" target="_blank">PyTorch</a>. Besides, I am fluent user of <a class="has-underline" href="https://www.djangoproject.com/" target="_blank" >Django</a> and good at full-stack web development. You could find some of my projects on <a class="has-underline" href="https://github.com/JiaBob" target="_blank">GitHub</a>.</p>
+<p class="index-main-p" style="text-align:justify;">Life of a man should not be bounded by career. Out of them, I'd like to share my interesting life with you. I like cooking, jogging, photography, philosophy, Go and playing video games.</p>
+<p class="index-main-p" style="text-align:justify;">This website will mainly decipt the scene of my life.</p>
 </div>
 <div id="index-content">
 	<p>Contents</p>
@@ -35,10 +40,8 @@
 	</ul>
 </div>
 </main>
-</body>
-
 <!-- highlight the select element (element id after # from url)-->
-<script>
+<script defer>
 select = function GetRequest() {
   var str = location.href
   var num = str.indexOf("#");
@@ -49,3 +52,7 @@ select = function GetRequest() {
 }
 select();
 </script>
+</body>
+</html>
+
+

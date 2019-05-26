@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>  articles </title>
+	<title>  HTML &amp; CSS Validation </title>
 	<meta charset='utf-8'/>
 	<meta name="keyword" content="my scene">
-	<link rel="icon" href="../static/img/icon_32.png" type="/image/x-icon">
+	<link rel="icon" href="../../static/img/icon_32.png" type="/image/x-icon">
 
     <!-- facebook -->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
@@ -18,9 +18,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- My own stuff-->
-    <script src="../static/js/dynamicLoadCss.js"></script>
-    <link rel="stylesheet" type="text/css" href="../static/css/original.css"> <!-- global css variable pass to my.css -->
-	<link rel="stylesheet" type="text/css" href="../static/css/my.css"> <!-- own css import should be at the end to override the css of boostrap4-->
+    <script src="../../static/js/dynamicLoadCss.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/original.css"> <!-- global css variable pass to my.css -->
+	<link rel="stylesheet" type="text/css" href="../../static/css/my.css"> <!-- own css import should be at the end to override the css of boostrap4-->
 
 </head>
 <body  >
@@ -28,16 +28,16 @@
 <!-- nav bar/ -->
 <nav class="top">
 <ul>
-<li><a href="../index.html">Home</a></li>
-<li><a href="../contents/article/1.html">Passion</a></li>
-<li><a href="../contents/articles.html">Articles</a></li>
-<li><a href="../contents/gallery.html">Gallery</a></li>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../contents/article/1.html">Passion</a></li>
+<li><a href="../../contents/articles.html">Articles</a></li>
+<li><a href="../../contents/gallery.html">Gallery</a></li>
 <li><a href="#" id="change-theme">Theme</a></li>  <!-- use href='#' to activate it and avoid refreshing page-->
 </ul>
 <div id="placeholder">
 	<ul>
 		<li>
-			<a href="https://github.com/JiaBob" target="_blank"><img src="../static/img/GitHub-Mark-32px.png"></a>
+			<a href="https://github.com/JiaBob" target="_blank"><img src="../../static/img/GitHub-Mark-32px.png"></a>
 		</li>
 	</ul>
 
@@ -48,8 +48,8 @@
 <!-- header/ -->
 <header>
 <div>
-	 <img id="title-img" src="../static/img/title.jpg"> 
-	<h1 id="title"> Articles </h1>
+	 <img id="title-img" src="../../static/img/title.jpg"> 
+	<h1 id="title"> HTML &amp; CSS Validation </h1>
 </div>
 </header>
 <!-- /header -->
@@ -57,33 +57,16 @@
 <!-- content/ -->
 
 <main id="inner-main">
-    
-        <div class="col-4">
-            <h4> 2019 </h4>
-            
-                <section>
-		            <h3> My Passion <span class="date"> March 31, 2019, 5:34 a.m.</span></h3>
-		            <article>
-			            <p> Bobolg is a personal website offering articles and medias produced by myself to like-minded, life-lo... <a class="has-underline" href="../contents/article/1.html">More</a></p>
-		            </article>
-                </section>
-            
-                <section>
-		            <h3> About my site <span class="date"> March 31, 2019, 5:34 a.m.</span></h3>
-		            <article>
-			            <p> This website is my first blog. I have planned to build a website from scratch for a long time, but u... <a class="has-underline" href="../contents/article/2.html">More</a></p>
-		            </article>
-                </section>
-            
-                <section>
-		            <h3> HTML &amp; CSS Validation <span class="date"> May 26, 2019, 5:10 p.m.</span></h3>
-		            <article>
-			            <p> There are some errors occured on HTML among all the HTML pages. The first one is about the web page ... <a class="has-underline" href="../contents/article/3.html">More</a></p>
-		            </article>
-                </section>
-            
-        </div>
-    
+	<article>
+	<p>There are some errors occured on HTML among all the HTML pages. The first one is about the web page icon. As it is a famous method to put icon for the website, I will remain this error here. The second error is about javascript loading. Code inside "script defer" will be loadded after DOM tree finished loading. What the validation error said is to put JS code in one more file and use "src" to load it. But for my case, those codes must be inside the same page with HTML.
+<img src="../../static/img/error1.jpg"/>
+The third error is because my image tag lacks "alt" attribute. This is truely my mistake. But as there are so many image in my gallery, I decided not to fix it at this time.
+<img src="../../static/img/error2.jpg"/>
+For CSS validation, the error shows that the validator cannot understand CSS variable, which is a valid function of new CSS. I use this function for alternative CSS page. Thus, it is actually not an error.
+<img src="../../static/img/error2.jpg"/></p>
+    <br>
+	<br>
+	</article>
 </main>
 
 <!-- /content -->
@@ -128,10 +111,10 @@
 
 <!-- float button/ -->
 <div id="fix-float">
-<a href="#title-img"><img id="up" src="../static/img/up-arrow.svg" width="24" height="24"></a>
-<a href="# "><img id="left" src="../static/img/left-arrow.svg" width="24" height="24" ></a>
-<a href="# "><img id="right" src="../static/img/right-arrow.svg" width="24" height="24" ></a>
-<a href="#left-footer"><img id="down" src="../static/img/down-arrow.svg" width="24" height="24" ></a>
+<a href="#title-img"><img id="up" src="../../static/img/up-arrow.svg" width="24" height="24"></a>
+<a href="# "><img id="left" src="../../static/img/left-arrow.svg" width="24" height="24" ></a>
+<a href="# "><img id="right" src="../../static/img/right-arrow.svg" width="24" height="24" ></a>
+<a href="#left-footer"><img id="down" src="../../static/img/down-arrow.svg" width="24" height="24" ></a>
 </div>
 <!-- /float button -->
 

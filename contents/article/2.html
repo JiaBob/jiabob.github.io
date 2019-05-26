@@ -1,12 +1,15 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<title>  Placeholder </title>
+	<title>  About my site </title>
 	<meta charset='utf-8'/>
 	<meta name="keyword" content="my scene">
-	<link rel="icon" href="../../static/img/icon_32.png" type="/image/x-icon" />
+	<link rel="icon" href="../../static/img/icon_32.png" type="/image/x-icon">
+
+    <!-- facebook -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
 
 	<!-- boostrap4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -14,7 +17,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="../../static/css/my.css"/> <!-- own css import should be at the end to override the css of boostrap4-->
+    <!-- My own stuff-->
+    <script src="../../static/js/dynamicLoadCss.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/original.css"> <!-- global css variable pass to my.css -->
+	<link rel="stylesheet" type="text/css" href="../../static/css/my.css"> <!-- own css import should be at the end to override the css of boostrap4-->
 
 </head>
 <body  >
@@ -25,20 +31,16 @@
 <li><a href="../../index.html">Home</a></li>
 <li><a href="../../contents/article/1.html">Passion</a></li>
 <li><a href="../../contents/articles.html">Articles</a></li>
-<li>
-	<a href="../../contents/gallery.html">Gallery</a>
-	<ul>
-	<li><a>...</a></li>
-	<li><a>...</a></li>
-	</ul>
-</li>
+<li><a href="../../contents/gallery.html">Gallery</a></li>
+<li><a href="#" id="change-theme">Theme</a></li>  <!-- use href='#' to activate it and avoid refreshing page-->
 </ul>
 <div id="placeholder">
 	<ul>
 		<li>
-			<a href="../../https://github.com/JiaBob.html" target="_blank"><img src="../../static/img/GitHub-Mark-32px.png"><img></a>
+			<a href="https://github.com/JiaBob" target="_blank"><img src="../../static/img/GitHub-Mark-32px.png"></a>
 		</li>
 	</ul>
+
 </div>
 </nav>
 <!-- /nav bar -->
@@ -47,7 +49,7 @@
 <header>
 <div>
 	 <img id="title-img" src="../../static/img/title.jpg"> 
-	<h1 id="title"> Placeholder </h1>
+	<h1 id="title"> About my site </h1>
 </div>
 </header>
 <!-- /header -->
@@ -56,7 +58,30 @@
 
 <main id="inner-main">
 	<article>
-	<p>PlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholderPlaceholder</p>
+	<h6 id="this-website-is-my-first-blog-i-have-planned-to-build-a-website-from-scratch-for-a-long-time-but-unfortunatly-i-did-not-take-this-step-until-i-took-course-comp1710-on-march-2019-actually-i-have-built-some-website-before-which-means-i-do-not-have-to-learn-website-programming-fully-from-this-course-but-i-still-thanks-this-course-for-indirectly-giving-me-such-opportunity">This website is my first blog. I have planned to build a website from scratch for a long time, but unfortunatly I did not take this step until I took Course COMP1710 on March 2019. Actually, I have built some website before, which means I do not have to learn website programming fully from this Course. But I still thanks this course for indirectly giving me such opportunity.</h6>
+<h6 id="the-reflection-contains-three-parts-the-program-view-mainly-describes-the-program-used-for-build-the-website-the-content-view-describes-the-possible-content-that-the-boblog-will-pubish-the-experience-view-describes-what-i-learn-during-building-this-website">The reflection contains three parts: The program view mainly describes the program used for build the website. The content view describes the possible content that the boblog will pubish. The experience view describes what I learn during building this website.</h6>
+<ul>
+<li>
+<h2 id="program-view">Program view</h2>
+<p>Apparently the website is static and it is held on github. The frontend only uses Boostrap4 and JQuery. I implement most of components from sracth. However, actually the entire work is not such simple. I programmed Django code for this website as backend. The backend. As it is only on my local computer, I regard this backend as static framework such as Hexo. Hence, there is an admin for content, including article and gallery, adding. If you have used Markdown, you can find this article is exactly Markdown. It is also the work of backend. Besides, I use MySQL for storing those content. To finally make a dynamic website static, I write a python script to crawl my local web server and localize the content so that it can be visited completely as a static HTML files.</p>
+<p>Here are some interesting parts of this work briefly.
+- CSS3 Animation (href highlight, four direction arrows)
+- Image Progressive Loading (animation, thumbnail, AWS S3)
+- Image Browser (gallery, designed from Boostrap4 modal)
+- Dynamic to Static (python script based on regular expression)</p>
+</li>
+<li>
+<h2 id="content-view">Content view</h2>
+<p>With respect to the COMP1710 assignment, the website contains a assignment description page(which will be removed after), sitemap.html(which should be .xml), source log, image map, gallery, facebook share button, facebook page feed, etc.
+In terms of my own blog, the core part is the article. Later on I will update some technical article in terms of my research field and my software development experience. </p>
+</li>
+<li>
+<h2 id="experience-view">Experience view</h2>
+Although, as I said, I have some full-stack website build experience, I still learn a lot this time. I try to use something pure and something that I have never used. 
+The most important one is about image gallery. The pain point is when we put original image on remote server, every time visitor browse the web page they have to wait the image loading. If there are many such kind of image, the loading time will be extremely long. Hence many methods are created along history, such as Spirite image, BASE64 encoding, lazy loading, progressive JPEG, CDN, etc. For my website, I uses a progressive loading strategy, which is frequently used on <a href="https://medium.com/" title="Medium">Medium</a>. For each original image, I put a thumbnail one and a original one on AWS S3. The website could load the thumbnail very quickly and wait for the loading of original one. Then use CSS3 animation to make the loading like a blur-to-vivid process.
+The second important creation is about the backend. My python crawler script is able to convert a dynamic website into fully static one. With the help of this, the website construction will be extremely convenient. For example, my website contains more than ten pages. But nearly all of them share same navigation bar and footer. If I write the HTML purely by "hand", I have to copy and paste them many many times. Furthermore, if something changed, I have to change all of them one by one. Moreover, there is an admin page on Django backend, which make the article writing and image publish a more friendly process. Because I do not have to do this directly on HTML files.</li>
+</ul>
+<p>There are many on going works. For example, making the website more adaptive (e.g. adaptive text), text background animation, multilingual web page.</p>
     <br>
 	<br>
 	</article>
@@ -82,6 +107,19 @@
 			<h4>Contact me</h4>
 			<p>xuxiansheng2055@gmail.com</p>
 			</div>
+			<div id="sn-btn">
+            <div class="fb-share-button" data-href="https://www.boblog.wiki" data-layout="button" data-size="large">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fboblog.wiki%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">share</a>
+</div>
+<div class="fb-save" data-uri="https://www.boblog.wiki" data-size="large"></div>
+			</div>
+            <p>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS!" />
+    </a>
+</p>
 		</div>
 	</div>
 	<hr>
@@ -98,13 +136,34 @@
 </div>
 <!-- /float button -->
 
-</body>
 
-<script>
+<script defer>
  
+
+let theme =  true;
+$('#change-theme').click(function(){
+    if (theme){
+        removeCss("/static/css/original.css");
+        dynamicLoadCss("/static/css/other.css");
+        theme = false;
+    }
+    else{
+        removeCss("/static/css/other.css");
+        dynamicLoadCss("/static/css/original.css");
+        theme = true;
+    }
+});
+
+$(window).scroll(function(){
+        if($(window).scrollTop() >= 300){
+            $('nav.top').css({'height':'50','transition': 'height 0.6s'});
+        } else{
+            $('nav.top').css('height','40');
+        }
+    });
 select = function GetRequest() {
-  var str = location.href
-  var num = str.indexOf("#");
+  let str = location.href
+  let num = str.indexOf("#");
   if (num != -1){
 	elementid = str.substr(num + 1);
     $("#"+elementid).css("border", "thick solid red");

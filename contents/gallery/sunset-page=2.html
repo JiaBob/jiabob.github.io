@@ -1,12 +1,15 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<title>  Gallery </title>
 	<meta charset='utf-8'/>
 	<meta name="keyword" content="my scene">
-	<link rel="icon" href="../../static/img/icon_32.png" type="/image/x-icon" />
+	<link rel="icon" href="../../static/img/icon_32.png" type="/image/x-icon">
+
+    <!-- facebook -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
 
 	<!-- boostrap4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -14,7 +17,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="../../static/css/my.css"/> <!-- own css import should be at the end to override the css of boostrap4-->
+    <!-- My own stuff-->
+    <script src="../../static/js/dynamicLoadCss.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/original.css"> <!-- global css variable pass to my.css -->
+	<link rel="stylesheet" type="text/css" href="../../static/css/my.css"> <!-- own css import should be at the end to override the css of boostrap4-->
 
 </head>
 <body  >
@@ -25,20 +31,16 @@
 <li><a href="../../index.html">Home</a></li>
 <li><a href="../../contents/article/1.html">Passion</a></li>
 <li><a href="../../contents/articles.html">Articles</a></li>
-<li>
-	<a href="../../contents/gallery.html">Gallery</a>
-	<ul>
-	<li><a>...</a></li>
-	<li><a>...</a></li>
-	</ul>
-</li>
+<li><a href="../../contents/gallery.html">Gallery</a></li>
+<li><a href="#" id="change-theme">Theme</a></li>  <!-- use href='#' to activate it and avoid refreshing page-->
 </ul>
 <div id="placeholder">
 	<ul>
 		<li>
-			<a href="../../https://github.com/JiaBob.html" target="_blank"><img src="../../static/img/GitHub-Mark-32px.png"><img></a>
+			<a href="https://github.com/JiaBob" target="_blank"><img src="../../static/img/GitHub-Mark-32px.png"></a>
 		</li>
 	</ul>
+
 </div>
 </nav>
 <!-- /nav bar -->
@@ -135,12 +137,12 @@
         <ul class="pager">
             
             <li class="">
-                <a href="/contents/gallery/sunset-page=1"> Previous Page</a>
+                <a href="../../contents/gallery/sunset-page=1.html"> Previous Page</a>
             </li>
             
             
             <li class="">
-                <a href="/contents/gallery/sunset-page=3"> Next Page</a>
+                <a href="../../contents/gallery/sunset-page=3.html"> Next Page</a>
             </li>
             
         </ul>
@@ -184,7 +186,7 @@
 		<div id="left-footer">
 			<div>
 			<p>Feedback</p>
-			<textarea rows='5' cols='50' form="the-form" name="body" placeholder="What you want to talk to me-" ></textarea>
+			<textarea rows='5' cols='50' form="the-form" name="body" placeholder="What you want to talk to me?" ></textarea>
 			<form id="the-form" action="mailto:123419282@qq.com" enctype="text/plain">
 				<input type="text" name="subject" value="boblog feedback" style="display:none" />
 				<input type="submit" class="btn btn-light" id="form-btn" value="send to me" />
@@ -196,6 +198,19 @@
 			<h4>Contact me</h4>
 			<p>xuxiansheng2055@gmail.com</p>
 			</div>
+			<div id="sn-btn">
+            <div class="fb-share-button" data-href="https://www.boblog.wiki" data-layout="button" data-size="large">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fboblog.wiki%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">share</a>
+</div>
+<div class="fb-save" data-uri="https://www.boblog.wiki" data-size="large"></div>
+			</div>
+            <p>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS!" />
+    </a>
+</p>
 		</div>
 	</div>
 	<hr>
@@ -206,28 +221,19 @@
 <!-- float button/ -->
 <div id="fix-float">
 <a href="#title-img"><img id="up" src="../../static/img/up-arrow.svg" width="24" height="24"></a>
-<a href="
-        
-            /contents/gallery/sunset-page=1
-        
-    "><img id="left" src="../../static/img/left-arrow.svg" width="24" height="24" ></a>
-<a href="
-        
-            /contents/gallery/sunset-page=3
-        
-    "><img id="right" src="../../static/img/right-arrow.svg" width="24" height="24" ></a>
+<a href="../../contents/gallery/sunset-page=1.html"><img id="left" src="../../static/img/left-arrow.svg" width="24" height="24" ></a>
+<a href="../../contents/gallery/sunset-page=3.html"><img id="right" src="../../static/img/right-arrow.svg" width="24" height="24" ></a>
 <a href="#left-footer"><img id="down" src="../../static/img/down-arrow.svg" width="24" height="24" ></a>
 </div>
 <!-- /float button -->
 
-</body>
 
-<script>
+<script defer>
 
     $(function(){
         // generate during initializing the page.
         // due to backend paginating, the img info must be in a list
-        var imglist = [{'boblogimg-18': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-18.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-18.jpg'}}, {'boblogimg-19': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-19.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-19.jpg'}}, {'boblogimg-20': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-20.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-20.jpg'}}, {'boblogimg-29': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-29.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-29.jpg'}}, {'boblogimg-30': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-30.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-30.jpg'}}, {'boblogimg-31': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-31.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-31.jpg'}}, {'boblogimg-32': {'desc': '<h3 id="is-the-color-like-the-world-of-specterfa-bullseyefa-bullseye">Is the color like the world of specter-:fa-bullseye::fa-bullseye:</h3>', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-32.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-32.jpg'}}, {'boblogimg-35': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-35.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-35.jpg'}}, {'boblogimg-36': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-36.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-36.jpg'}}, {'boblogimg-37': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-37.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-37.jpg'}}, {'boblogimg-39': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-39.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-39.jpg'}}, {'boblogimg-41': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-41.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-41.jpg'}}]
+        var imglist = [{'boblogimg-18': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-18.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-18.jpg'}}, {'boblogimg-19': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-19.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-19.jpg'}}, {'boblogimg-20': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-20.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-20.jpg'}}, {'boblogimg-29': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-29.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-29.jpg'}}, {'boblogimg-30': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-30.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-30.jpg'}}, {'boblogimg-31': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-31.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-31.jpg'}}, {'boblogimg-32': {'desc': '<h3 id="is-the-color-like-the-world-of-specterfa-bullseyefa-bullseye">Is the color like the world of specter?:fa-bullseye::fa-bullseye:</h3>', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-32.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-32.jpg'}}, {'boblogimg-35': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-35.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-35.jpg'}}, {'boblogimg-36': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-36.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-36.jpg'}}, {'boblogimg-37': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-37.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-37.jpg'}}, {'boblogimg-39': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-39.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-39.jpg'}}, {'boblogimg-41': {'desc': '', 'url': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_small/boblogimg-41.jpg', 'original': 'https://s3-ap-southeast-2.amazonaws.com/jiabob-img/boblog/boblog_prog_jpg/boblogimg-41.jpg'}}]
         var imgdict = new Array();
 
         var srcindex = []; // for browser forward and backward
@@ -243,7 +249,7 @@
         var idx;  // record current image index
 
         $('.modal button.left').click(function(){
-            idx = idx - 1 >= 0 - idx ? 1 : imglength - 1; // for browsing image in a loop
+            idx = idx - 1 >= 0 ? idx - 1 : imglength - 1; // for browsing image in a loop
             $('.modal').find('.modal-img img').nextAll().remove(); // for progressive image loading
             imgshow('.modal', imgdict[srcindex[idx]]);
         })
@@ -282,9 +288,31 @@
         }
     })
 
+
+let theme =  true;
+$('#change-theme').click(function(){
+    if (theme){
+        removeCss("/static/css/original.css");
+        dynamicLoadCss("/static/css/other.css");
+        theme = false;
+    }
+    else{
+        removeCss("/static/css/other.css");
+        dynamicLoadCss("/static/css/original.css");
+        theme = true;
+    }
+});
+
+$(window).scroll(function(){
+        if($(window).scrollTop() >= 300){
+            $('nav.top').css({'height':'50','transition': 'height 0.6s'});
+        } else{
+            $('nav.top').css('height','40');
+        }
+    });
 select = function GetRequest() {
-  var str = location.href
-  var num = str.indexOf("#");
+  let str = location.href
+  let num = str.indexOf("#");
   if (num != -1){
 	elementid = str.substr(num + 1);
     $("#"+elementid).css("border", "thick solid red");

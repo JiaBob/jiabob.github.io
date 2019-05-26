@@ -16,21 +16,21 @@ body.inner{
 
 a:link, a:visited{
 	text-decoration: none;
-	color: black;
+	color: var(--a_color);
 }
 a:hover{
 	text-decoration: none;
 	color: black;
-	border-bottom: thick solid #0DD00D;
+	border-bottom: thick solid var(--a_border_color);
 }
 a.has-underline:link, a.has-underline:visited{
 	text-decoration: none;
 	color: black;
-	border-bottom: thick solid #0DD00D;
+	border-bottom: thick solid var(--a_border_color);
 }
 a.has-underline:hover{
 	text-decoration: none;
-	background-color: #1DDD3D;
+	background-color:var(--a_border_color);
 	transition: background-color 1s;
 }
 
@@ -87,19 +87,19 @@ nav.top {
 	border: 0;
 	width: 100%;
 	height: 40px;
-	background-color: #D0D0D0;
+	background-color: var(--nav_background_color);
 	position: fixed;
 	top: 0;
 	z-index:10;
 }
 
 nav.top a{
-	padding: 14px 16px;
+	padding: 11px 16px;
 }
 
 /* link hover style (to override the overall setting)*/
 nav.top a:hover{
-	background-color: #D0D0D0;
+	background-color: var(--nav_hover_color);
 	border-bottom: none;
 	text-decoration: none;
 }
@@ -107,30 +107,8 @@ nav.top a:hover{
 /* nav bar main menu (left part of it)*/
 nav.top ul{
 	display: flex;
+	margin:0;  /* this line is very important. there is a default bottom margin*/
 	list-style-type: none;
-}
-
-nav.top ul ul {  /* hide second level drop-down list before hovering*/
-	display: none;
-}
-
-nav.top ul li:hover ul{  /* show second level drop-down list when hovering*/
-	display: flex;
-	flex-direction: column;
-	position: absolute;  /* must use aboslute to make the second level list overflow*/
-	top: 36px;  /* have to adjust the distance to make them connected*/
-}
-
-nav.top ul ul li{
-	display: flex;
-	background-color: white;
-	position: relative;
-	right: 40px;  /* have to adjust the position to make them aligned*/
-}
-
-nav.top ul ul li a{  /* have to adjust the padding to make them aligned*/
-	padding: 14px 29px;
-	margin: 1px;
 }
 
 /* placeholder (right part of the nav bar) */
@@ -193,7 +171,23 @@ main div.gallery-label-title{
 	height:80px;
 	width:80%;
 }
-
+main div.sn-feed{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	position:absolute;
+	z-index:9;  /* cannot be bigger than nav(its 10) */
+	right: 10px;
+	top: 350px;
+	width: 20%;
+}
+main div#feed button{
+	height: 35px;
+	opacity: 0.5;
+}
+main div#feed div{
+	width:100%;
+}
 main div.gallery-label-align{
 	display:flex;
 	position: relative;
@@ -236,32 +230,12 @@ main div.gallery-label-img img{
 	padding: 0;
 	height:550px;
 }
-.modal-body inner{
-	display:flex;
-	flex-direction: column;
-	height:100%;
-	width:100%;
-	margin:0;
-	padding:0;
-}
 .modal-body div.showsingle{
 	display:flex;
 	flex-direction:row;
 	height:70%;
 }
-.modal-body div.showall{
-	width:100%;
-	height:10%;
-	display:flex;
-	flex-direction:row;
-}
-.modal-body div.showall div.img{
-	display:flex;
-	flex-grow: 0;
-}
-.modal-body div.showall div.img img{
-	width:100%;
-}
+
 .modal-body div.wrapper{
 	display:flex;
 	margin: 10px;
@@ -323,8 +297,8 @@ footer{
 	flex-direction: column;
 	flex: 0 0 auto;
 	height: 320px;
-	background-color: #303030;
-	color: #DDDDDD;
+	background-color: var(--footer_background_color);
+	color: var( --footer_color);
 }
 hr{
 	color: black;
